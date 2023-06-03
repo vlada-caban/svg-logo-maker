@@ -43,7 +43,7 @@ function init() {
 
   inquirer.prompt(questions).then((answers) => {
     console.log(answers);
-    // writeToFile("./logo.svg", generateSVG(answers));
+    writeToFile("./logo.svg", generateSVG(answers));
   });
 }
 
