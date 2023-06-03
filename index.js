@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateSVG = require("./lib/generateSVG")
 
 //An array of questions using inquirer package
 const questions = [
@@ -42,7 +43,7 @@ function init() {
 
   inquirer.prompt(questions).then((answers) => {
     console.log(answers);
-    // writeToFile("./generatedREADME/README.md", generateMarkdown(answers));
+    // writeToFile("./logo.svg", generateSVG(answers));
   });
 }
 
