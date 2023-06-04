@@ -2,18 +2,35 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateSVG = require("./lib/generateSVG")
 
+
+const validateLogoLength = (text) => {
+  if (text.length<=3 && text.length>0) {
+    return true;
+  }
+  return "Logo needs to be at least 1 character and can maximum be 3 characters long. Try again.";
+}
+
+const checkColor = (color) => {
+  if (color !== "") {
+    return true;
+  }
+  return "Please enter color.";
+};
+
 //An array of questions using inquirer package
 const questions = [
   {
     type: "input",
     name: "logo_text_input",
     message: "Please enter up to three characters for your logo: ",
+    validate: validateLogoLength,
   },
   {
     type: "input",
     name: "logo_color_input",
     message:
       "Please enter text color (either color keyword or a hexadecimal number): ",
+    validate: checkColor,
   },
   {
     type: "list",
@@ -26,8 +43,8 @@ const questions = [
     name: "shape_color_input",
     message:
       "Please enter shape color (either color keyword or a hexadecimal number): ",
+    validate: checkColor,
   },
-
 ];
 
 //function to create and write into README
