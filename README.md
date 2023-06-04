@@ -25,7 +25,7 @@ Used for generating SVG logo based on user input per below two examples. Color c
 
 ![questions example](./images/questions.png)
 
-Link to the walkthrough video: [follow the link]()
+Link to the walkthrough video: [follow the link](https://drive.google.com/file/d/1JFE4_9RyS1qQAmnPDFEbrmisyyT8qJWC/view?usp=sharing)
 
 Example of generated logos: [link inside the repo](./examples/)
 
