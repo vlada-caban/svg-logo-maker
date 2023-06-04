@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateSVG = require("./lib/generateSVG")
 
-
+//function to check if logo text is at least 1 character long and no more than 3 characters
 const validateLogoLength = (text) => {
   if (text.length<=3 && text.length>0) {
     return true;
@@ -10,6 +10,7 @@ const validateLogoLength = (text) => {
   return "Logo needs to be at least 1 character and can maximum be 3 characters long. Try again.";
 }
 
+//function to check if user entered color
 const checkColor = (color) => {
   if (color !== "") {
     return true;
@@ -59,7 +60,6 @@ function init() {
   console.log("Initializing...");
 
   inquirer.prompt(questions).then((answers) => {
-    console.log(answers);
     writeToFile("./logo.svg", generateSVG(answers));
   });
 }
